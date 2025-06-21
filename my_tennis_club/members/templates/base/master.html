@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+  <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+  <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+   {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+  {% include "tem_members/mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+<div class="container">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/members">MEMBERS</a>
+    </li>
+  </ul>
+
+  
+
+{% block content %}
+
+{% include 'tem_members/footer.html' %} 
+
+{% endblock %}
+
+</body>
+</html>

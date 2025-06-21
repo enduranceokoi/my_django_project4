@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+    <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+
+<body>
+
+
+
+<div class="topnav">
+  <a href="/">HOME</a> |
+  <p><a href="{% url 'members:all_members' %}">View All Members</a></a>
+
+  {% comment %} <a href="/members">MEMBERS</a> {% endcomment %}
+</div>
+
+<h1>Welcome</h1>
+
+<p>This is my webpage</p>
+
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+
+<h1>Hello {{ firstname }}, how are you?</h1>
+
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>In views.py you can see how to import and fetch members from the datab
+
+
+{% include 'tem_members/footer.html' %} 
+
+
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+
+</body>
+</html>

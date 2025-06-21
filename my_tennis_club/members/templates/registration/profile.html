@@ -1,0 +1,20 @@
+{% extends 'base/master.html' %}
+
+{% block title %}
+    your profile
+{% endblock %}
+
+{% block content %}
+    
+    <div  class="container mt-5">
+        <h2>Wellcome, {{username}}!</h2>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Last Login:</strong> {{ last_login }}</p>
+
+        <hr>
+
+
+        <a href="{%  url 'members:directory'  %}">view all members</a>
+        <a href="{%  url 'members:logout'  %}" class="btn btn-danger">logout</a>
+    </div> 
+{% endblock %}

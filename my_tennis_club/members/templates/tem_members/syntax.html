@@ -1,0 +1,26 @@
+{% extends "base/master.html" %}
+
+{% block title %}
+  My signtax page
+
+{% block content %}
+
+{% for x in cars %}
+  <h1>{{ x.brand }}</h1>
+  <p>{{ x.model }}</p>
+  <p>{{ x.year }}</p>
+{% endfor %} 
+
+{% if greeting == 1 %}
+  <h1>Hello</h1>
+{% endif %}
+
+{% if 'Banana' not in fruits %}
+  <h1>Hello</h1>
+{% else %}
+  <h1>Goodbye</h1>
+{% endif %} 
+
+<p>In views.py you can see what the cars variable looks like.</p>
+
+{% endblock %}

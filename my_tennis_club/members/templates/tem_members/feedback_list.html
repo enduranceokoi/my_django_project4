@@ -1,0 +1,17 @@
+{% extends "base/master.html" %}
+{% block title %}Feedback Submissions{% endblock %}
+
+{% block content %}
+  <h2>Feedback Submissions</h2>
+  <ul class="list-group">
+    {% for f in feedbacks %}
+      <li class="list-group-item">
+        <strong>{{ f.name }}</strong> ({{ f.email }})<br>
+        {{ f.message }}<br>
+        <small>Submitted on: {{ f.submitted_at }}</small>
+      </li>
+    {% empty %}
+      <li class="list-group-item">No feedback submissions yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
