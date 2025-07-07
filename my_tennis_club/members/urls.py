@@ -5,9 +5,10 @@ from . import views
 app_name = 'members'
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('myfirst/', views.myfirst, name='myfirst'),
     path('main/', views.main, name='main'),
-    path('members/', views.members, name='my_members'),
+    path('members/', views.members, name='members'),
     path('testing/', views.testing, name= 'testing'),
     path('members/details/<slug:slug>', views.details, name='details'),
     path('syntax/', views.syntax, name='syntax'),

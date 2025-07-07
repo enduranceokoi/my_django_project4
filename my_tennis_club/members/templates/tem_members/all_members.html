@@ -9,6 +9,10 @@
 {% block content %}
   
 <p><a href="/">Home</a></p>
+<p><a href="{% url 'members:testing' %}">View All Members</a></a>
+
+
+{% comment %} <p><a href="/">Home</a></p> {% endcomment %}
 <ul>
   {% for x in mymembers %}
     <li onclick="window.location ='details/{{x.slug}}'">{{ x.firstname }} {{ x.lastname }} </li>
@@ -20,6 +24,7 @@
 
 {% comment %} <a href="/data">View All Database Records</a> {% endcomment %}
 
-
+ <a href="{%  url 'members:login' %}">login</a>
+  <a href="{%  url 'members:register' %}">Register</a>
 
 {% endblock %}

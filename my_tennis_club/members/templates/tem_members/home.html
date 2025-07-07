@@ -1,0 +1,55 @@
+
+{% extends "base/master.html" %}
+
+{% block title%}
+  MY HOME PAGE
+
+{% endblock %}
+
+{% block content %}
+  
+<p><a href="/">Home</a></p>
+<p><a href="{% url 'members:members' %}">Members</a></a>
+
+
+    
+<h1>Welcome to my  home page</h1>
+
+<p>This is my Homepage</p>
+
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+
+<h1>Hello {{ firstname }}, how are you?</h1>
+
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+
+
+ <a href="{%  url 'members:login' %}">login</a>
+  <a href="{%  url 'members:register' %}">Register</a>
+
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% comment %} <p><a href="/">Home</a></p> {% endcomment %}
+
+
+
+{% endblock %}

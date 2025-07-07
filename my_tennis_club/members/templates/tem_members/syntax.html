@@ -2,6 +2,7 @@
 
 {% block title %}
   My signtax page
+{% endblock %}
 
 {% block content %}
 
@@ -20,6 +21,9 @@
 {% else %}
   <h1>Goodbye</h1>
 {% endif %} 
+
+ <a href="{%  url 'members:login' %}">login</a>
+  <a href="{%  url 'members:register' %}">Register</a>
 
 <p>In views.py you can see what the cars variable looks like.</p>
 

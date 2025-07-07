@@ -13,6 +13,11 @@ from .models import Feedback
 from django.contrib.admin.views.decorators import staff_member_required
 
 
+
+def home(request):
+  template = loader.get_template('tem_members/home.html')
+  return HttpResponse(template.render())
+
 def myfirst(request):
   template = loader.get_template('tem_members/myfirst.html')
   return HttpResponse(template.render())
